@@ -24,8 +24,9 @@ def guessing_game():
     print('\nWelcome to the number guessing game!')
     print('Guess a number between 10 and 30.\n')
 
-    while not user_input or not user_input.isdigit():
-        user_input = input('Guess a number: ')
+    while True:
+        while not user_input or not user_input.isdigit():
+            user_input = input('Guess a number: ')
 
         guess = int(user_input)
 
@@ -40,7 +41,7 @@ def guessing_game():
         num_tries += 1
         user_input = ''
 
-    print(f'\nYou guessed correctly! It took you {num_tries} tries.')
+        print(f'\nYou guessed correctly! It took you {num_tries} tries.')
 
 if __name__ == '__main__':
     guessing_game();
