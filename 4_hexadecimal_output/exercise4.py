@@ -7,12 +7,19 @@ def hex_to_dec(s: str):
 
     total = 0
 
-    # reverse, and uppercase the string, while
+    # reverse, and lowercase the string, while
     # ignoring the first two '0x' characters.
-    for power, hex_digit in enumerate(reversed(s[2:].upper())):
+    for power, hex_digit in enumerate(reversed(s[2:].lower())):
         # convert hex_digit into base 16
         # then multiply by (16^power), and add to sum
-        total += int(hex_digit, 16) * (16 ** power)
+
+        hex_integer = int(hex_digit, 16)
+        # another way, checking if it is a letter first: 
+        # (assuming correct input)
+        # hex_integer = ord(hex_digit) - 87 if ord(hex_digit) - 87 > 0 else int(hex_digit)
+
+        total += hex_integer * (16 ** power)
+
     
     return total
 
