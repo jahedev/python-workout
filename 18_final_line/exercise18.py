@@ -10,6 +10,8 @@ def get_final_line(filepath):
     with open(filepath) as f:
         for line in f:
             last_line = line
+        ## alternatively:
+        # last_line = f.readlines()[-1]
     return last_line
 
 
